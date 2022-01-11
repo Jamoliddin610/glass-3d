@@ -40,7 +40,7 @@ body {
     font-size: 30px;
     text-transform: capitalize;
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
 
 }
@@ -48,29 +48,25 @@ body {
 
 .front {
     transform: translate3d(0, 0, 150px);
-    opacity: 0.6;
-     animation: cube 5s infinite linear;
-     animation-direction: alternate;
+    opacity: 0.4;
+
 
 }
 
 .back {
     transform: translate3d(0, 0, -150px) rotateY(180deg);
-     animation: cube 5s infinite linear;
-     animation-direction: alternate;
+
 }
 
 .left {
     transform: translate3d(-150px, 0, 0px) rotateY(-90deg);
-     animation: cube 5s infinite linear;
-     animation-direction: alternate;
-    opacity:0.6;
+    opacity:0.4;
 }
 
 .right {
     transform: translate3d(150px, 0, 0px) rotateY(90deg);
-     animation: cube 5s infinite linear;
-     animation-direction: alternate;
+
+
 
 
 }
@@ -78,7 +74,11 @@ body {
 .top {
     transform: translate3d(0px, -150px, 0px) rotateX(-90deg);
     background-color: #263645;
-    animation: cube-top 5s infinite  linear;
+    animation: cube-top-first;
+    animation-iteration-count: infinite;
+    animation-delay:2s ;
+    animation-duration: 3s;
+    
     
 
 }
@@ -86,7 +86,6 @@ body {
 
 .bottom {
     transform: translate3d(0px, 150px, 0px) rotateX(-90deg);
-    background-color: #25A759;
     box-shadow: 0px 0px 31px 4px rgba(28, 29, 30, 1);
 }
 .content:hover {
@@ -97,114 +96,84 @@ body {
     box-shadow: 0px 0px 100px 30px rgba(28, 29, 30, 1);
 }
 
-/* @keyframes cube {
-    0% {
-        background-color: #233142;
-    }
-    100% {
-        background-image: linear-gradient(to top, #25A759 100%, #233142 0%);
+.after-front{
+    transform: translate3d(0, 0, 150px);
+    background-color: #28BC64;
+    height: 0px;
+        animation-name: cube;
+        animation-direction: alternate;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
 
-    }
-} */
+}
+.after-back {
+    transform: translate3d(0, 0, -150px) rotateY(180deg);
+    background-color: #28BC64;
+    height: 0px;
+        animation-name: cube;
+        animation-direction: alternate;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+
+}
+.after-right {
+    transform: translate3d(150px, 0, 0px) rotateY(90deg);
+    background-color: #28BC64;
+    height: 0px;
+        animation-name: cube;
+        animation-direction: alternate;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+
+}
+.after-left {
+    transform: translate3d(-150px, 0, 0px) rotateY(-90deg);
+    background-color: #28BC64;
+    height: 0px;
+    animation-name: cube;
+    animation-direction: alternate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+
+}
+.after-bottom {
+    transform: translate3d(0px, 150px, 0px) rotateX(-90deg);
+    background-color: #28BC64;
+
+
+}
+.after-top{
+    transform: translate3d(0px, -150px, 0px) rotateX(-90deg);
+    background-color: #26B460;
+    animation-name:cube-top ;
+    animation-direction: alternate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    
+}
 @keyframes cube {
-    0% {
-        background-color: #233142;
+    0%{
+        height: 0;
     }
-
-    5% {
-        background: linear-gradient(180deg, #2331428a 95%, #25A759 95%);
-    }
-
-    10% {
-        background: linear-gradient(180deg, #2331428a 90%, #25A759 90%);
-    }
-
-    15% {
-        background: linear-gradient(180deg, #2331428a 85%, #25A759 85%);
-    }
-
-    20% {
-        background: linear-gradient(180deg, #233142a8 80%, #25A759 80%);
-    }
-
-    25% {
-        background: linear-gradient(180deg, #2331428a 75%, #25A759 75%);
-    }
-
-    30% {
-        background: linear-gradient(180deg, #2331428a 70%, #25A759 70%);
-    }
-
-    35% {
-        background: linear-gradient(180deg, #2331428a 65%, #25A759 65%);
-    }
-
-    40% {
-        background: linear-gradient(180deg, #2331428a 60%, #25A759 60%);
-    }
-
-    45% {
-        background: linear-gradient(180deg, #2331428a 55%, #25A759 55%);
-    }
-
-    50% {
-        background: linear-gradient(180deg, #2331428a 50%, #25A759 50%);
-    }
-
-    55% {
-        background: linear-gradient(180deg, #2331428a 45%, #25A759 45%);
-    }
-
-    60% {
-        background: linear-gradient(180deg, #2331428a 40%, #25A759 40%);
-    }
-
-    65% {
-        background: linear-gradient(180deg, #2331428a 35%, #25A759 35%);
-    }
-
-    70% {
-        background: linear-gradient(180deg, #2331428a 30%, #25A759 30%);
-    }
-
-    85% {
-        background: linear-gradient(180deg, #2331428a 25%, #25A759 25%);
-    }
-
-    80% {
-        background: linear-gradient(180deg, #2331428a 20%, #25A759 20%);
-    }
-
-    85% {
-        background: linear-gradient(180deg, #2331428a 15%, #25A759 15%);
-    }
-
-    90% {
-        background: linear-gradient(180deg, #2331428a 10%, #25A759 10%);
-    }
-
-    95% {
-        background: linear-gradient(180deg, #2331428a 5%, #25A759 5%);
-    }
-
-    100% {
-        background-color: #25A759;
+    100%{
+        height: 98%;
     }
 }
-@keyframes cube-top {
-    0% {
-        opacity: 1;
+@keyframes cube-top{
+    0%{
+      transform: translate3d(0px, 150px, 0px) rotateX(-90deg);
     }
-    40%{
-        opacity: 1;
-    } 
 
-    80%{
+    100%{
+    transform: translate3d(0px, -150px, 0px) rotateX(-90deg);
+
+    }
+}
+@keyframes cube-top-first{
+    0%{
         opacity: 1;
     }
-    100% {
+    100%{
         opacity: 0;
-
-
     }
 }
